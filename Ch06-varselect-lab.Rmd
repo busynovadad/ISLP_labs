@@ -2,20 +2,24 @@
 jupyter:
   jupytext:
     cell_metadata_filter: -all
-    formats: Rmd,ipynb
+    formats: ipynb,Rmd
     main_language: python
     text_representation:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.14.7
+      jupytext_version: 1.16.7
 ---
 
+# Linear Models and Regularization Methods
 
-# Chapter 6
+<a target="_blank" href="https://colab.research.google.com/github/intro-stat-learning/ISLP_labs/blob/v2.2/Ch06-varselect-lab.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/intro-stat-learning/ISLP_labs/v2.2?labpath=Ch06-varselect-lab.ipynb)
 
 
-# Lab: Linear Models and Regularization Methods
 In this lab we implement many of the techniques discussed in this chapter.
 We import some of our libraries at this top
 level. 
@@ -35,7 +39,7 @@ from functools import partial
 ```
 
 We again collect the new imports
-needed for this lab.
+needed for this lab. Readers will also have to have installed `l0bnb` using `pip install l0bnb`.
 
 ```{python}
 from sklearn.pipeline import Pipeline
@@ -45,11 +49,10 @@ from ISLP.models import \
      (Stepwise,
       sklearn_selected,
       sklearn_selection_path)
-# !pip install l0bnb
 from l0bnb import fit_path
 
 ```
-We have installed the package `l0bnb` on the fly. Note the escaped `!pip install` --- this is run as a separate system command. 
+
 ## Subset Selection Methods
 Here we implement methods that reduce the number of parameters in a
 model by restricting the model to a subset of the input variables.
@@ -344,7 +347,7 @@ The function `fit_path()` returns a list whose values include the fitted coeffic
 path[3]
 
 ```
-In the example above, we see that at the fourth step in the path, we have two nonzero coefficients in `'B'`, corresponding to the value $0.114$ for the penalty parameter `lambda_0`.
+In the example above, we see that at the fourth step in the path, we have two nonzero coefficients in `'B'`, corresponding to the value $0.0114$ for the penalty parameter `lambda_0`.
 We could make predictions using this sequence of fits on a validation set as a function of `lambda_0`, or with more work using cross-validation.
 
 ## Ridge Regression and the Lasso
@@ -540,7 +543,7 @@ grid.best_params_['ridge__alpha']
 grid.best_estimator_
 
 ```
-Recall we set up the `kfold` object for 5-fold cross-validation on page 298. We now plot the cross-validated MSE as a function of $-\log(\lambda)$, which has shrinkage decreasing from left
+Recall we set up the `kfold` object for 5-fold cross-validation on page 271. We now plot the cross-validated MSE as a function of $-\log(\lambda)$, which has shrinkage decreasing from left
 to right.
 
 ```{python}
@@ -728,7 +731,7 @@ ax.set_ylabel('Standardized coefficiients', fontsize=20);
 ```
 The smallest cross-validated error is lower than the test set MSE of the null model
 and of least squares, and very similar to the test MSE of 115526.71 of ridge
-regression (page 305) with $\lambda$ chosen by cross-validation.
+regression (page 278) with $\lambda$ chosen by cross-validation.
 
 ```{python}
 np.min(tuned_lasso.mse_path_.mean(1))
@@ -923,6 +926,6 @@ ax.set_ylim([50000,250000]);
 ```
 
 CV error is minimized at 12,
-though there is little noticable difference between this point and a much lower number like 2 or 3 components.
+though there is little noticeable difference between this point and a much lower number like 2 or 3 components.
 
 

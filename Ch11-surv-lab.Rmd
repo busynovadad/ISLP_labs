@@ -2,22 +2,24 @@
 jupyter:
   jupytext:
     cell_metadata_filter: -all
-    formats: Rmd,ipynb
+    formats: ipynb,Rmd
     main_language: python
     text_representation:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.14.7
+      jupytext_version: 1.16.7
 ---
 
+# Survival Analysis
 
-# Chapter 11
+<a target="_blank" href="https://colab.research.google.com/github/intro-stat-learning/ISLP_labs/blob/v2.2/Ch11-surv-lab.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/intro-stat-learning/ISLP_labs/v2.2?labpath=Ch11-surv-lab.ipynb)
 
 
-
-
-# Lab: Survival Analysis
  In this lab, we perform survival analyses on three separate data
 sets. In  Section 11.8.1 we analyze the  `BrainCancer` 
 data  that was first described in Section 11.3. In Section 11.8.2, we examine the  `Publication` 

@@ -2,21 +2,26 @@
 jupyter:
   jupytext:
     cell_metadata_filter: -all
-    formats: Rmd,ipynb
+    formats: ipynb,Rmd
     main_language: python
     text_representation:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.14.7
+      jupytext_version: 1.16.7
 ---
 
+# Non-Linear Modeling
 
-# Chapter 7
+<a target="_blank" href="https://colab.research.google.com/github/intro-stat-learning/ISLP_labs/blob/v2.2/Ch07-nonlin-lab.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
-# Lab: Non-Linear Modeling
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/intro-stat-learning/ISLP_labs/v2.2?labpath=Ch07-nonlin-lab.ipynb)
+
+
 In this lab, we demonstrate some of the nonlinear models discussed in
-this chapter. We use the `Wage`  data as a running example, and show that many of the complex non-linear fitting procedures discussed can easily be implemented in \Python.
+this chapter. We use the `Wage`  data as a running example, and show that many of the complex non-linear fitting procedures discussed can easily be implemented in `Python`.
 
 As usual, we start with some of our standard imports.
 
@@ -83,7 +88,7 @@ for feature transformations such as `PCA()` seen in Section 6.5.3) which
 allows for easy evaluation of the polynomial at new data points. Here `poly()` is referred to as a *helper* function, and sets up the transformation; `Poly()` is the actual workhorse that computes the transformation. See also 
 the 
 discussion of transformations on
-page 129. 
+page 118. 
 
 In the code above, the first line executes the `fit()` method
 using the dataframe
@@ -149,7 +154,7 @@ of density. Notice the use of the `zip()` function in the
 `for` loop above (see Section 2.3.8).
 We have three lines to plot, each with different colors and line
 types. Here `zip()` conveniently bundles these together as
-iterators in the loop. {In `Python`  speak, an "iterator" is an object with a finite number of values, that can be iterated on, as in a loop.}
+iterators in the loop. {In `Python`{} speak, an "iterator" is an object with a finite number of values, that can be iterated on, as in a loop.}
 
 We now plot the fit of the fourth-degree polynomial using this
 function.

@@ -2,23 +2,28 @@
 jupyter:
   jupytext:
     cell_metadata_filter: -all
-    formats: Rmd,ipynb
+    formats: ipynb,Rmd
     main_language: python
     text_representation:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.14.7
+      jupytext_version: 1.16.7
 ---
 
+# Unsupervised Learning
 
-# Chapter 12
+<a target="_blank" href="https://colab.research.google.com/github/intro-stat-learning/ISLP_labs/blob/v2.2/Ch12-unsup-lab.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
-# Lab: Unsupervised Learning
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/intro-stat-learning/ISLP_labs/v2.2?labpath=Ch12-unsup-lab.ipynb)
+
+
 In this lab we demonstrate PCA and clustering on several datasets.
 As in other labs, we import some of our libraries at this top
 level. This makes the code more readable, as scanning the first few
-lines of the notebook tell us what libraries are used in this
+lines of the notebook tells us what libraries are used in this
 notebook.
 
 ```{python}
@@ -262,7 +267,7 @@ We now re-create the analysis carried out on the `USArrests` data in
 Section 12.3.
 
 We saw  in Section 12.2.2  that solving the optimization
-problem (12.6)   on a centered data matrix $\bf X$ is
+problem~(12.6)   on a centered data matrix $\bf X$ is
 equivalent to computing the first $M$ principal
 components of the data.  We use our scaled
 and centered `USArrests` data as $\bf X$ below. The *singular value decomposition* 
@@ -399,7 +404,7 @@ np.corrcoef(Xapp[ismiss], X[ismiss])[0,1]
 ```
 
 
-In this lab, we implemented  Algorithm 12.1  ourselves for didactic purposes. However, a reader who wishes to apply matrix completion to their data might look to more specialized `Python`  implementations.
+In this lab, we implemented  Algorithm 12.1  ourselves for didactic purposes. However, a reader who wishes to apply matrix completion to their data might look to more specialized `Python`{} implementations.
 
 
 ## Clustering
@@ -845,7 +850,7 @@ ax.axhline(140, c='r', linewidth=4);
 
 ```
 
-The `axhline()`  function draws a horizontal line  line on top of any
+The `axhline()`  function draws a horizontal line on top of any
 existing set of axes. The argument `140` plots a horizontal
 line at height 140 on the dendrogram; this is a height that
 results in four distinct clusters. It is easy to verify that the

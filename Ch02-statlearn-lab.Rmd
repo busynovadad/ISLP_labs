@@ -2,18 +2,24 @@
 jupyter:
   jupytext:
     cell_metadata_filter: -all
-    formats: Rmd,ipynb
+    formats: ipynb,Rmd
+    main_language: python
     text_representation:
       extension: .Rmd
       format_name: rmarkdown
       format_version: '1.2'
-      jupytext_version: 1.14.7
+      jupytext_version: 1.16.7
 ---
 
+# Introduction to Python
 
-# Chapter 2
+<a target="_blank" href="https://colab.research.google.com/github/intro-stat-learning/ISLP_labs/blob/v2.2/Ch02-statlearn-lab.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
-# Lab: Introduction to Python
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/intro-stat-learning/ISLP_labs/v2.2?labpath=Ch02-statlearn-lab.ipynb)
+
+
 
 
 
@@ -662,7 +668,7 @@ ax.contour(x, y, f, levels=45);
 ```
 To fine-tune the output of the
 `ax.contour()`  function, take a
-look at the help file by typing `?plt.contour`.
+look at the help file by typing `ax.contour?`.
  
 The `ax.imshow()`  method is similar to 
 `ax.contour()`, except that it produces a color-coded plot
@@ -843,7 +849,7 @@ A[1:4:2,0:3:2]
 
 
 Why are we able to retrieve a submatrix directly using slices but not using lists?
-Its because they are different `Python` types, and
+It's because they are different `Python` types, and
 are treated differently by `numpy`.
 Slices can be used to extract objects from arbitrary sequences, such as strings, lists, and tuples, while the use of lists for indexing is more limited.
 
@@ -896,7 +902,8 @@ A[np.array([0,1,0,1])]
 
 ```
 
- By contrast, `keep_rows` retrieves only the second and fourth rows  of `A` --- i.e. the rows for which the Boolean equals `TRUE`. 
+ By contrast, `keep_rows` retrieves only the second and fourth rows  of `A` --- i.e. the rows for which the Boolean equals `True`. 
+
 
 ```{python}
 A[keep_rows]
@@ -1159,7 +1166,7 @@ Auto_re.loc[lambda df: (df['year'] > 80) & (df['mpg'] > 30),
 The symbol `&` computes an element-wise *and* operation.
 As another example, suppose that we want to retrieve all `Ford` and `Datsun`
 cars with `displacement` less than 300. We check whether each `name` entry contains either the string `ford` or `datsun` using the  `str.contains()` method of the `index` attribute of 
-of the dataframe:
+the dataframe:
 
 ```{python}
 Auto_re.loc[lambda df: (df['displacement'] < 300)
@@ -1395,7 +1402,7 @@ Auto['cylinders'].describe()
 Auto['mpg'].describe()
 
 ```
-To exit `Jupyter`,  select `File / Close and Halt`.
+To exit `Jupyter`,  select `File / Shut Down`.
 
  
 
